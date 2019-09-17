@@ -22,10 +22,18 @@ void loop() {
     float tmp = dht12.readTemperature();
     float hum = dht12.readHumidity();
     M5.Lcd.setCursor(0, 0);
-    M5.Lcd.setTextColor(BLUE, BLACK);
+    M5.Lcd.setTextColor(WHITE, BLACK);
     M5.Lcd.setTextSize(3);
-    M5.Lcd.printf("Temp: %2.1f", tmp);
-    M5.Lcd.printf("Hum.: %2.1f", hum);
+    M5.Lcd.print("Temp: ");
+    M5.Lcd.setTextColor(YELLOW, BLACK);
+    M5.Lcd.printf("%2.1f", tmp);
+    M5.Lcd.setTextColor(WHITE, BLACK);
+    M5.Lcd.printf(" C\r\n");
+    M5.Lcd.print("Hum : ");
+    M5.Lcd.setTextColor(PINK, BLACK);
+    M5.Lcd.printf("%2.1f", hum);
+    M5.Lcd.setTextColor(WHITE, BLACK);
+    M5.Lcd.printf(" %%\n");
 
     delay(15000);
 
